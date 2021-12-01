@@ -1,0 +1,43 @@
+body{
+  display: flex;
+  flex-direction: column;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.navigation img{
+  width: 150px;
+}
+
+.navigation ul li{
+  display: inline-block;
+  padding: 0;
+  margin: 0 5px;
+}
+
+header, header ul, header a {
+  background-color: #1F2937;
+  color: white;
+  list-style: none;
+  text-decoration: none;
+}
+
+.section-1{
+  text-align: center;
+  padding: 48px;
+}
+.cards{
+  display: flex;
+}
+
+.card img{
+  width: 20%;
+}
