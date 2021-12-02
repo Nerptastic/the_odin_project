@@ -21,10 +21,15 @@
       </ul>
     </div>
     <div class="header-section">
-      <h1>Bingus is here to stay</h1>
-      <p> This is Bingus Man's website. He's a legendary infinite plain of Bingus.</p>
-      <button> Bingus Me</button>
-      <img src="bingus-logo.png">
+      <div class="header-text-section">
+        <h1>Bingus is here to stay</h1>
+        <p style="line-height: 24px;"> This is Bingus Man's website. <br>He's a legendary infinite plain of Bingus.</p>
+        <div class="buttons">
+          <button class="button" onClick="changeColor()"> Bingus Me</button>
+          <button class="button" onClick="changeBack()"> Bingus Me Back</button>
+        </div>
+      </div>
+      <img id="image" src="bingus-logo.png">
     </div>
   </header>
 
@@ -32,37 +37,44 @@
     <h2>Bingus Man's Fat Cheeks.</h2>
     <div class="cards">
       <div class="card">
-        <img src="iu.png">
-        <p> Bingus man has a letter for you</p>
+        <div class="square"></div>
+        <p> Bingus has felt your presence before Bingus man has a letter for you</p>
       </div>
       <div class="card">
-        <img src="iu.png">
-        <p> Bingus has felt your presence before</p>
+        <div class="square"></div>
+        <p> Bingus man has a letter for you Bingus has felt your presence before</p>
       </div>
       <div class="card">
-        <img src="iu.png">
-        <p> He loves it when you talk to him like that</p>
+        <div class="square"></div>
+        <p> Bingus bingus man is mans He loves it when you talk to him like that</p>
       </div>
       <div class="card">
-        <img src="iu.png">
-        <p> Bingus bingus man is mans</p>
+        <div class="square"></div>
+        <p> He loves it when you talk to him like that Bingus bingus man is mans</p>
       </div>
     </div>
   </section>
 
   <section class="section-2">
-    <quote>
+    <p>
       "Chingus says that bingus is his best friend, lingus pingus. Bingus has been checking for the big fat lingus for a
-      minute" - Bingus Man
-    </quote>
+      minute"
+    </p>
+    <p class="title">- Bingus Man</p>
 
   </section>
 
   <section class="section-3">
+
     <div class="CTA">
-      <h3>Call for Bingus.</h3>
-      <p>Bingus wants you to suckle on his lingus. His big fat lingus. Chingus.</p>
-      <button>Check my Bingus</button>
+      <div class="CTA-left">
+        <h3>Call for Bingus.</h3>
+        <p>Bingus wants you to tickle on his lingus. His big fat lingus. Chingus.</p>
+      </div>
+      <div class="CTA-right">
+        <button class="button">Check my Bingus</button>
+      </div>
+
     </div>
 
   </section>
@@ -72,5 +84,15 @@
   </footer>
 
 </body>
+
+<script>
+  function changeColor() {
+    document.getElementById("image").style.background = "#5c3301";
+  }
+
+  function changeBack() {
+    document.getElementById("image").style.background = "#3882f6";
+  }
+</script>
 
 </html>
