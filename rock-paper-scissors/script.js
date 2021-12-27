@@ -1,3 +1,9 @@
+const btnOne = document.getElementById('btnOne');
+const btnTwo = document.getElementById('btnTwo');
+const btnThree = document.getElementById('btnThree');
+const roundOutput = document.getElementById('roundOutput');
+const gameScore = document.getElementById('gameScore');
+const resetButton = document.createElement('button');
 let playerSelection;
 let computerSelection;
 let playerScore = 0;
@@ -10,62 +16,108 @@ function computerPlay() {
   } else if (randomNumber == 1) {
     return "paper"
   } else {
-    return "scissors";
+    return "knife";
   }
 }
 
+btnOne.addEventListener('click', function (event) {
+  playerSelection = "rock";
+  computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
+});
+
+btnTwo.addEventListener('click', function (event) {
+  playerSelection = "paper";
+  computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
+
+});
+
+btnThree.addEventListener('click', function (event) {
+  playerSelection = "knife";
+  computerSelection = computerPlay();
+  playRound(playerSelection, computerSelection);
+});
+
+btnFour.addEventListener('click', function (event) {
+  resetGame();
+});
+
+
 function playRound(playerSelection, computerSelection) {
+  
   if (computerSelection == playerSelection){
-    return `It's a tie. You chose ${playerSelection} and the computer chose ${computerSelection}.`;
-  } else if (computerSelection == "rock" && playerSelection == "scissors" ) {
+    roundOutput.textContent = `It's a tie. You chose ${playerSelection} and the computer chose ${computerSelection}.`;
+    gameScore.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+
+  } else if (computerSelection == "rock" && playerSelection == "knife" ) {
     computerScore++;
-    return "You lose. Rock beats scissors.";
+    gameScore.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    roundOutput.textContent = "You lose. Rock beats Knife.";
 
   } else if (computerSelection == "rock" && playerSelection == "paper" ) {
     playerScore++;
-    return "You win. Paper beats rock.";
+    gameScore.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    roundOutput.textContent = "You win. Paper beats rock.";
 
-  } else if (computerSelection == "paper" && playerSelection == "scissors" ) {
+  } else if (computerSelection == "paper" && playerSelection == "knife" ) {
     playerScore++;
-    return "You win. Scissors beats paper.";
+    gameScore.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    roundOutput.textContent = "You win. Knife beats paper.";
 
   } else if (computerSelection == "paper" && playerSelection == "rock" ) {
     computerScore++;
-    return "You lose. Paper beats rock.";
+    gameScore.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    roundOutput.textContent = "You lose. Paper beats rock.";
 
-  } else if (computerSelection == "scissors" && playerSelection == "rock" ) {
+  } else if (computerSelection == "knife" && playerSelection == "rock" ) {
     playerScore++;
-    return "You win. Rock beats scissors.";
+    gameScore.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    roundOutput.textContent = "You win. Rock beats knife.";
 
-  } else if (computerSelection == "scissors" && playerSelection == "paper" ) {
+  } else if (computerSelection == "knife" && playerSelection == "paper" ) {
     computerScore++;
-    return "You lose. Scissors beats paper.";
+    gameScore.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    roundOutput.textContent = "You lose. Knife beats paper.";
 
   } else {
-    return `You chose ${playerSelection}, you dummy. No idea who wins.`;
+    gameScore.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    roundOutput.textContent = `You chose ${playerSelection}, you dummy. No idea who wins.`;
+
   }
+
+  if (computerScore > 4){
+    runWinnerComputer();
+  } else if (playerScore > 4) {
+    runWinnerPlayer();
+  } else {
+  }
+
 }
 
-function game(){
-  for (let i = 1; i <= 10; i++){
-    if (playerScore == 3){
-      console.log(" You win the best of 5");
-      return;
-    } else if (computerScore == 3){
-      console.log("The computer wins the best of 5");
-      return;
-    } else {
-    playerSelection = prompt("Rock, Paper, or Scissors?");
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerPlay();
-    console.log(`You chose ${playerSelection}`);
-    console.log(`The computer chose ${computerSelection}`);
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(`Player score: ${playerScore}`);
-    console.log(`Computer score: ${computerScore}`);
-    }
-  }
+function runWinnerComputer(){
+  gameScore.style.color = "red";
+  gameScore.textContent = "You lose! Bad job...";
+  roundOutput.textContent = "You lost to a random algorithm...";
+
+  btnFour.style = "display: unset;";
 }
 
+function runWinnerPlayer(){
+  gameScore.style.color = "green";
+  gameScore.textContent = "You Won! Good Job!!!";
+  roundOutput.textContent = "Sweet deal. Computer is no match for the man.";
 
-game();
+  btnFour.style = "display: unset;";
+}
+
+function resetGame(){
+  gameScore.style.color = "black";
+  playerScore = 0;
+  computerScore = 0;
+  roundOutput.textContent = "No rounds played yet.";
+  gameScore.textContent = "Player: 0 Computer: 0";
+  btnFour.style = "display: none;";
+
+}
+

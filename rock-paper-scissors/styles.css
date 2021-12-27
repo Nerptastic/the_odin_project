@@ -13,6 +13,8 @@ button {
   font-size: 2em;
   padding: 15px;
   margin: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 p {
@@ -21,7 +23,9 @@ p {
 }
 
 button:hover {
-  background-color: rgb(194, 35, 35);
+  background-color: rgb(114, 114, 114);
   color: white;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
