@@ -21,3 +21,22 @@ p {
   font-size: 25px;
   font-weight: 100;
 }
+
+#gridContainer {
+  box-sizing: border-box;
+  margin: auto;
+  width: 450px;
+  height: 450px;
+}
+
+.single {
+  float: left;
+  height: 12px;
+  width: 12px;
+  margin: 1px;
+  background-color: #efefef;
+}
+
+.single:hover {
+  background-color: #555555;
+}
