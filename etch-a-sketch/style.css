@@ -2,9 +2,13 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
   flex-direction: column;
-  margin: 0px;
-  padding: 20px;
-  text-align: center;;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 25px;
+  font-weight: 100;
 }
 
 button {
@@ -17,26 +21,38 @@ button {
   border-radius: 5px;
 }
 
-p {
-  font-size: 25px;
-  font-weight: 100;
+button:hover {
+  background-color: rgb(114, 114, 114);
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
-#gridContainer {
-  box-sizing: border-box;
-  margin: auto;
-  width: 450px;
-  height: 450px;
+/* End global styles */
+
+
+.container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
 }
 
-.single {
-  float: left;
-  height: 12px;
-  width: 12px;
-  margin: 1px;
-  background-color: #efefef;
+.container-wrapper {
+  height: 100vw;
+  width: 100vw;
+  max-height: 600px;
+  max-width: 600px;
+  margin: 25px auto;
+  position: relative;
+  border: 3px solid black;
 }
 
-.single:hover {
-  background-color: #555555;
+
+.container > * {
+  height: 100%;
+  background-color: #ffffff;
+  transition: all 0.2s;
+  border: 1px solid black;
 }
