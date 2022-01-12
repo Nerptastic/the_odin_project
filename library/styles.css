@@ -1,0 +1,84 @@
+body{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color:rgb(16, 17, 18);
+  max-width: 1260px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1, h2 {
+  color:rgb(188, 221, 255);
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 42px;
+}
+
+p {
+  color: white;
+}
+
+header {
+  margin: 20px;
+}
+
+button {
+  background-color: rgb(188, 221, 255);
+  color: rgb(16, 17, 18);
+  padding: 12px;
+  border-radius: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  width: 200px;
+  border: 1px solid white;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+button:hover {
+  background-color: rgb(127, 149, 171);
+  color: white;
+
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;  
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.book{
+  border: 3px solid rgb(188, 221, 255);
+  border-radius: 5px;
+  width: 30%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.author{
+  font-weight: bold;
+}
+
+.status-read {
+  background-color:rgb(127, 171, 127);
+  padding: 20px;
+  
+}
+
+.status-not-read {
+  background-color:rgb(171, 127, 127);
+  padding: 20px;
+}
+
+@media only screen and (max-width: 700px){
+  .container{
+    display: block;
+  }
+  .book {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 25px auto;
+  }
+}
