@@ -20,14 +20,21 @@ let myLibrary = [];
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 350, 8, true)
 const ballaBook = new Book("The balla", "J.R.R Ballin", 360, 3, false)
 
+myLibrary.push(theHobbit, ballaBook)
+
 function addBookToLibrary(){
-  //Takes user input and creates a new Book entry
-  console.log("Yes")
+  // Selecting the input element and get their values
+  let userTitle = document.getElementById("userTitle").value;
+  let userAuthor = document.getElementById("userAuthor").value;
+  let userPages = document.getElementById("userPages").value;
+  let userRating = document.getElementById("userRating").value;
+  let userReadStatus = document.getElementById("userReadStatus").value;
 
-}
+  let userBook = new Book(userTitle, userAuthor, userPages, userRating, userReadStatus)
+  myLibrary.push(userBook)
+  addBookDiv(userBook)
 
-function updateBookList(){
-  //Function will take the array of books and add a book/remove a book when it is added/removed from the array
+
 }
 
 function addBookDiv(Book){

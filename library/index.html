@@ -15,7 +15,13 @@
     <h1>Library</h1>
     <p>It stores books, add one if you have ever read a book.</p>
   </header>
-  <button>Add Book</button>
+  <input type="text" placeholder="Book Title" id="userTitle">
+  <input type="text" placeholder="Author" id="userAuthor">
+  <input type="number" placeholder="Pages" id="userPages">
+  <input type="number" placeholder="Rating" id="userRating">
+  <input type="checkbox" placeholder="Read Status" id="userReadStatus">
+  <button type="submit" onclick="addBookToLibrary();" value="Submit">Add Book</button>
+
   <div class="container">
 
     <div class="book">
