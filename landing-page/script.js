@@ -1,9 +1,10 @@
-let a = 17;
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5, d: 5};
 
-const func = x => {
-  let a = x;
-};
+const returnedTarget = Object.assign(target, source);
 
-func(99);
+console.log(target);
+// expected output: Object { a: 1, b: 4, c: 5 }
 
-console.log(a); // ???????
+console.log(returnedTarget);
+// expected output: Object { a: 1, b: 4, c: 5 }
