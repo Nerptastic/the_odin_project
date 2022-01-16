@@ -15,32 +15,19 @@
     <h1>Library</h1>
     <p>It stores books, add one if you have ever read a book.</p>
   </header>
-  <input type="text" placeholder="Book Title" id="userTitle">
-  <input type="text" placeholder="Author" id="userAuthor">
-  <input type="number" placeholder="Pages" id="userPages">
-  <input type="number" placeholder="Rating" id="userRating">
-  <input type="checkbox" placeholder="Read Status" id="userReadStatus">
-  <button type="submit" onclick="addBookToLibrary();" value="Submit">Add Book</button>
+
+  <div class="add-form">
+
+    <input type="text" placeholder="Book Title" id="userTitle" required>
+
+    <input type="text" placeholder="Author" id="userAuthor" required>
+
+    <input type="number" placeholder="Pages" id="userPages" required>
+  </div>
+  <button class="add-button" type="submit" value="Submit">Add Book</button>
 
   <div class="container">
 
-    <div class="book">
-      <h2>The Stand</h2>
-      <p class="author">by Stephen King</p>
-      <p class="pages">808 Pages</p>
-      <p class="rating">Rating: 5/10</p>
-      <p class="status-read">Read</p>
-
-    </div>
-
-    <div class="book">
-      <h2>The Bible</h2>
-      <p class="author">by Jesus</p>
-      <p class="pages">1,400 Pages</p>
-      <p class="rating">Rating: 8/10</p>
-      <p class="status-not-read">Not Read</p>
-
-    </div>
 
   </div>
 

@@ -1,91 +1,131 @@
 const statusReadPara = document.querySelectorAll('.status-read')
 const statusNotReadPara = document.querySelectorAll('.status-not-read')
-const addBookButton = document.querySelector('button')
+const addBookButton = document.querySelector('.add-button')
 const bookContainer = document.querySelector('.container')
+const deleteButton = document.querySelectorAll('.delete-button')
 
-function Book(title, author, pages, rating, readStatus){
+// Book Class
+class Book {
+  constructor(title, author, pages, readStatus) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.rating = rating;
   this.readStatus = readStatus;
 
-  this.info = function() {
-    return `This is ${title}, a book by ${author}. It is ${pages} pages long and it ${readStatus}. It is rated ${rating}/10.`;
+}
+}
+
+// UI Class
+class BookInterface {
+  static deleteBook = function(element) {
+    if (element.classList.contains("delete-button")) {
+      element.parentElement.parentElement.remove();
+    }
+  }
+  static changeReadStatus = function(element) {
+    if (element.classList.contains("read-button") && (element.textContent === 'Read')) {
+      element.style.backgroundColor = "rgb(171, 127, 127)";
+      element.textContent = 'Not Read'
+      console.log("Running changeReadStatus to READ")
+    } else if (element.classList.contains("read-button") && (element.textContent = 'Not Read')) {
+      element.style.backgroundColor = "rgb(127, 171, 127)";
+      element.textContent = 'Read'
+      console.log("Running changeReadStatus to Not Read")
+    }
   }
 }
 
 let myLibrary = [];
 
-const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 350, 8, true)
-const ballaBook = new Book("The balla", "J.R.R Ballin", 360, 3, false)
+// Pushes the initial books to the library
+const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 350, true)
+const theStand = new Book("The Stand", "Stephen King", 823, true)
+const theBible = new Book("The Bible", "Jesus Christ", 1247, false)
 
-myLibrary.push(theHobbit, ballaBook)
+myLibrary.push(theHobbit, theBible, theStand)
 
+
+//Adds the book
 function addBookToLibrary(){
   // Selecting the input element and get their values
   let userTitle = document.getElementById("userTitle").value;
   let userAuthor = document.getElementById("userAuthor").value;
   let userPages = document.getElementById("userPages").value;
-  let userRating = document.getElementById("userRating").value;
-  let userReadStatus = document.getElementById("userReadStatus").value;
 
-  let userBook = new Book(userTitle, userAuthor, userPages, userRating, userReadStatus)
+  if (userTitle == '') {
+    alert("Title must be present")
+    return
+  } else if (userAuthor == '') {
+    alert("Authors do exist for a reason")
+    return
+  } else if (userPages == '') {
+    alert("Pages are generally a number...")
+    return
+  } else if (userPages > 1000000 || userPages <= 0) {
+    alert("That's not a real amount of pages, man...")
+    return
+  }
+
+
+  let userBook = new Book(userTitle, userAuthor, userPages)
   myLibrary.push(userBook)
   addBookDiv(userBook)
-
-
+  clearFields()
 }
 
+//Creates a new DOM element with users book info and styling
 function addBookDiv(Book){
-
   const newBookDiv = document.createElement('div')
   const newBookTitle = document.createElement('h2')
   const newBookAuthor = document.createElement('p')
   const newBookPages = document.createElement('p')
-  const newBookRating = document.createElement('p')
-  const newBookStatus = document.createElement('p')
+  const newBookButtonDiv = document.createElement('div')
+  const newBookReadButton = document.createElement('button')
+  const newBookDeleteButton = document.createElement('button')
 
-  newBookDiv.append(newBookTitle, newBookAuthor, newBookPages, newBookRating, newBookStatus)
+  newBookDiv.append(newBookTitle, newBookAuthor, newBookPages, newBookButtonDiv)
+  newBookButtonDiv.append(newBookReadButton, newBookDeleteButton)
 
   newBookTitle.textContent = Book.title;
   newBookAuthor.textContent = `by ${Book.author}`
   newBookPages.textContent = `${Book.pages} Pages`
-  newBookRating.textContent = `Rating: ${Book.rating}/10`
 
   newBookDiv.classList.add("book")
   newBookAuthor.classList.add("author")
   newBookPages.classList.add("pages")
-  newBookRating.classList.add("rating")
+  newBookButtonDiv.classList.add("buttons")
+  newBookReadButton.classList.add("read-button")
+  newBookDeleteButton.classList.add("delete-button")
+
+
+  newBookReadButton.textContent = "Read"
+  newBookDeleteButton.textContent = "Delete"
   
-  if(Book.readStatus){
-    newBookStatus.textContent = "Read"
-    newBookStatus.classList.remove("status-not-read")
-    newBookStatus.classList.add("status-read")
-
-  } else {
-    newBookStatus.textContent = "Not Read"
-    newBookStatus.classList.remove("status-read")
-    newBookStatus.classList.add("status-not-read")
-  }
-
-
   bookContainer.prepend(newBookDiv)
-
 }
 
+// Clears the fields after a book is added
+function clearFields(){
+  document.getElementById('userTitle').value = '';
+  document.getElementById('userAuthor').value = '';
+  document.getElementById('userPages').value = '';
+}
 
+// Selects the add button and adds book to library
 addBookButton.addEventListener('click', addBookToLibrary)
 
-/* PsuedoCode: 
+// Removes book when delete is pressed
+document.querySelector('.container').addEventListener('click', (e) => {
+    BookInterface.deleteBook(e.target)
+});
 
-1. User clicks "Add Book"
-2. Form pops up for user input
-3. User enters information/status
-4. User clicks "Add"
-5. Book is added to the DOM
-6. User clicks "Click to read"
-6. User clicks "Delete book"
-7. Book is removed from list 
+document.querySelector('.container').addEventListener('click', (e) => {
+  BookInterface.changeReadStatus(e.target)
+});
 
-*/
+
+
+
+addBookDiv(theHobbit);
+addBookDiv(theBible);
+addBookDiv(theStand);

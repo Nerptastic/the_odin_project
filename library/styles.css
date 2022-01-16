@@ -24,6 +24,35 @@ header {
   margin: 20px;
 }
 
+.add-form {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+input {
+  background-color: white;
+  color: rgb(16, 17, 18);
+  border-radius: 50px;
+  font-size: 14px;
+  border: 2px solid rgb(188, 221, 255);
+  height: 40px;
+  padding-left: 20px;
+  margin: 20px auto;
+}
+
+.add-button {
+  background-color: rgb(188, 221, 255);
+  color: rgb(16, 17, 18);
+  border-radius: 50px;
+  font-size: 14px;
+  border: 2px solid white;
+  height: 46px;
+  margin: 20px;
+}
+
+
 button {
   background-color: rgb(188, 221, 255);
   color: rgb(16, 17, 18);
@@ -70,6 +99,35 @@ button:hover {
 .status-not-read {
   background-color:rgb(171, 127, 127);
   padding: 20px;
+}
+
+.buttons {
+  display: flex;
+  margin: 10px;
+}
+
+.buttons button {
+  font-size: 16px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.delete-button{
+  background-color: rgb(16, 17, 18);
+  color: white;
+}
+.delete-button:hover{
+  background-color: rgb(187, 87, 87);
+  color: white;
+}
+
+.read-button{
+  background-color: rgb(127, 171, 127);
+  color: rgb(16, 17, 18);
+}
+.read-button:hover{
+  background-color: rgb(171, 127, 127);
+  color: white;
 }
 
 @media only screen and (max-width: 700px){
