@@ -1,110 +1,120 @@
-/* PsuedoCode :
-1. Game is initialized with an empty board
-2. Player 1 clicks on a square
-3. An X is populated on the gameboard
-4. Player 2 clicks on a square
-5. An O is populated on the gameboard
-Repeat 2-5 Until either
-  A. The game recognizes a winner
-  B. The game recognizes a draw
-6. Declare either a winner, or a draw
-7. Player clicks restart
-8. The gameboard is cleared, and the process restarts
-*/
+const gameStatus = document.querySelector('.status');
+let gameRunning = true;
+let player = 'X';
+let boardArray = ['', '', '', '', '', '', '', '', ''];
+const winningArrays = 
+[
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+];
 
 
-// --------------- Testing/Dev Code Section ---------------
-/*
+const winMessage = () => `${player} has won the game`;
+const tieMessage = () => 'The game is a tie';
+const playerTurn = () => `It is ${player}'s turn`;
+gameStatus.innerHTML = playerTurn();
 
-Thinking about how the array is going to be layed out / interact with the code
+function playSquare(clickedSquare, clickedSquareIndex) {
+  // Put the appropriate mark from player into the box
+  boardArray[clickedSquareIndex] = player;
+  clickedSquare.innerHTML = player;
 
-let gameArray = [];
+}
 
-Array squares have numbers from 1 to 9, L to R, T to B
-So It's layed out like this
+function computerPlay(emptySquare) {
+  emptySquare = Math.floor(Math.random() * 9);
+}
 
-[ 1, 2, 3, 
-  4, 5, 6,
-  7, 8, 9
-]
+function changePlayer() {
+  // Set the player to the opposite mark
+  player = player === "X" ? "O" : "X";
+  // Update the current player message in the dom
+  gameStatus.innerHTML = playerTurn();
 
-But each of these will be EMPTY, X, or O
+}
 
-[ X, O, X, 
-  O, X, O,
-  X, O, X
-]
+function checkWinner() {
+  // Run this every turn, stop the game and declare a winner if a winningCondition is met
+  // Loop through the winning conditions / see if the current board has a winner, if not, continue the game
+  // If none of the spots are empty, declare a draw
 
-Player 1 clicks index 1, populate index 1 with X - So on. 
+  let roundOver = false;
+  for (let i = 0; i <= 7; i++) {
+    const wonArray = winningArrays[i];
+    let firstPosition = boardArray[wonArray[0]];
+    let secondPosition = boardArray[wonArray[1]];
+    let thirdPosition = boardArray[wonArray[2]];
+    if (firstPosition === '' || secondPosition === '' || thirdPosition == ''){
+      continue;
+    }
 
-
-*/
-// --------------- End Testing/Dev Code Section ---------------
-
-// Gameboard Array (Module)
-const gameBoard = (() => {
-
-  const log = (message) => console.log(`[${Date.now()}] Logger: ${message}`);
-
-  const initializeGameboard = (x) => {
-    log("Initializing Gameboard");
-    return x;
-  };
-
-  return {
-    initializeGameboard
+    if (firstPosition === secondPosition && secondPosition === thirdPosition) {
+      roundOver = true;
+      break
+    }
   }
-})();
-
-console.log(gameBoard.initializeGameboard("Initializing Gameboard"));
-
-// DisplayController (Module)
-const displayController = (() => {
-
-  const log = (message) => console.log(`[${Date.now()}] Logger: ${message}`);
-
-  const updateGameboard = (x) => {
-    log("Updating gameboard");
-    return x;
-  };
-
-  const restartGame = (x) => {
-    log("Restarting game");
-    return x;
-  };
-
-  return {
-    updateGameboard,
-    restartGame
+  
+  if (roundOver) {
+      gameStatus.innerHTML = winMessage();
+      gameRunning = false;
+      return;
+    }
+   
+  let tiedRound = !boardArray.includes('');
+  if (tiedRound) {
+    gameStatus.innerHTML = tieMessage();
+      gameRunning = false;
+      return;
   }
-})();
-
-console.log(displayController.updateGameboard("Updating Gameboard"));
-console.log(displayController.restartGame("Restarting Game"));
-
-// Player (Factory)
-const Player = (name, level) => {
-  let health = level * 2;
-  const getLevel = () => level;
-  const getName  = () => name;
-  const damage = x => {
-    health -= x;
-    if (health <= 0) {
-      die();
-    }
-  };
-  const attack = enemy => {
-    if (level < enemy.getLevel()) {
-      damage(1);
-      console.log(`${enemy.getName()} has damaged ${name}`);
-    }
-    if (level >= enemy.getLevel()) {
-      enemy.damage(1);
-      console.log(`${name} has damaged ${enemy.getName()}`);
-    }
-  };
-  return {attack, damage, getLevel, getName}
-};
 
 
+  changePlayer();
+}
 
+function updateSquare(clickedSquareEvent) {
+  // Updates the square that was clicked in the backend
+
+  const clickedSquare = clickedSquareEvent.target;
+
+  //Turning the square clicked into a number for use in the array
+  const clickedSquareIndex = parseInt(
+    clickedSquare.getAttribute('data-index')
+  );
+
+  //if the board array is already clicked at the location or the game is over, return
+  if (boardArray[clickedSquareIndex] !== '' || !gameRunning) {
+    return;
+  }
+
+  playSquare(clickedSquare, clickedSquareIndex);
+  checkWinner();
+}
+
+function restartGame() {
+  // Set all of the game values back to the initial values
+  gameRunning = true;
+  player = 'X';
+  boardArray = ['', '', '', '', '', '', '', '', ''];
+  document.querySelectorAll('.square').forEach(square => square.textContent = '')
+
+}
+
+document.querySelectorAll('.square').forEach(square => square.addEventListener('click', updateSquare));
+document.querySelector('.restart-button').addEventListener('click', restartGame);
+
+/* PseudoCode: 
+
+1. Initialize the game with winMessage, tieMessage, playerTurn, gameStatus, set game running to true, set the boardArray
+2. Handle a click with playSquare
+3. Update the square (in the DOM and in the backend) with UpdateSquare
+4. Check if there's a winner with checkWinner
+5. Change the current player to "O", repeat the process for "O"
+6. Restart the game, setting player back to "X", boardArray to empty
+
+*/
