@@ -19,8 +19,17 @@ body {
 
 }
 
+hr {
+  margin: 20px;
+}
+
 h1 {
   font-weight: 700;
+  color: rgb(173, 252, 255);
+  margin: 20px;
+}
+
+h2 {
   color: rgb(173, 252, 255);
   margin: 20px;
 }
