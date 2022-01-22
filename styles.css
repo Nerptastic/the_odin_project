@@ -1,0 +1,50 @@
+/* Google Fonts and Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap');
+
+
+/* Global Styles */
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  font-family: 'Roboto Mono' , monospace;
+  background-color: #000000;
+  color: #FFFFFF;
+
+}
+
+h1 {
+  font-weight: 700;
+  color: rgb(173, 252, 255);
+  margin: 20px;
+}
+
+p {
+  margin: 20px;
+}
+
+.container {
+  margin: 20px;
+}
+
+ul {
+  line-height: 40px;
+}
+
+ul li {
+  margin: 10px;
+  list-style: none;
+  display: inline;
+
+}
+
+a {
+  color: rgb(173, 252, 255);
+
+}
