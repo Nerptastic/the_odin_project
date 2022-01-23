@@ -10,7 +10,7 @@ body{
 
 .button:hover{
   cursor: pointer;
-  background-color:#2f64bb;
+  background-color:#2fbb67;
 }
 
 .navigation{
@@ -36,7 +36,7 @@ header h1 {
 }
 
 header, header ul, header a {
-  background-color: #1F2937;
+  background-color: #244d43;
   color: white;
   list-style: none;
   text-decoration: none;
@@ -52,11 +52,16 @@ header, header ul, header a {
 
 }
 
-.header-section img{
-  border: 3px solid white;
+#image {
+  background: url("background.jpg");
+  background-position: center center;
+  background-size: cover;
   border-radius: 16px;
-  padding: 10px;
-  background-color: #3882f6;
+  padding: 5px;
+  border: 5px solid #2fbb67;
+  background-color: #2fbb67;
+  height: 250px;
+  width: 50%;
 }
 
 .header-text-section{
@@ -69,15 +74,15 @@ header, header ul, header a {
 }
 
 .header-text-section button{
-  width: 150px;
+  width: 130px;
   height: 40px;
   border-radius: 8px;
   margin-top: 24px;
-  background-color: #3882f6;
+  background-color: #2fbb67;
   border: none;
   color: white;
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .buttons{
@@ -85,17 +90,23 @@ header, header ul, header a {
   gap: 10px;
 }
 
-.section-1{
-  text-align: center;
-  padding: 20px;
-  max-width: 1050px;
-  margin: auto;
+.hidden-section {
+  display: none;
 }
 
-.section-1 h2{
+#section {
+  text-align: center;
+  padding: 50px;
+  max-width: 1050px;
+  margin: auto;
+
+}
+
+#section h2{
   color:#1F2937;
   font-size: 36px;
   font-weight: 800;
+  margin-top: 0;
 }
 .cards{
   display: flex;
@@ -106,45 +117,57 @@ header, header ul, header a {
 .card p{
   max-width: 180px;
   color: grey;
+  margin-top: 15px !important;
+  font-size: 18px !important;
 }
 
-.square {
-  border: 4px solid #3882f6;
+.square1, .square2, .square3, .square4 {
+  border: 4px solid #2fbb67;
   height: 150px;
   width: 150px;
   margin: auto;
   border-radius: 20px;
 }
 
-.section-2{
-  background-color: #e5e7eb;
-  padding: 100px;
+.square1 {
+  background: url("image1.jpg");
+  background-position: center top;
 }
-.section-2 p{
+
+.square2 {
+  background: url("image2.jpg");
+  background-position: center;
+}
+
+.square3 {
+  background: url("image3.jpg");
+  background-position: center;
+}
+
+.square4 {
+  background: url("image4.jpg");
+  background-position: center;
+}
+
+#section p{
   font-size: 36px;
   font-weight: 100;
   max-width: 800px;
   font-style:italic;
   margin: auto;
-
 }
 
-.section-2 .title{
+#section .title{
   font-weight: 800;
   text-align: right;
-
-  margin-top: 0;
+  margin-top: 20px;
 }
 
 .card img{
   width: 20%;
 }
-
-.section-3{
-  padding: 50px;
-}
 .CTA {
-  background-color: #3882f6;
+  background-color: #2fbb67;
   border-radius: 15px;
   color: white;
   display: flex;
@@ -156,19 +179,22 @@ header, header ul, header a {
 }
 
 .CTA-left{
-  margin: 30px;
+margin: 30px;
 font-weight: bold;
+text-align: left;
 }
 
 .CTA-left h3{
-  font-size: 28px;
+
+  font-size: 36px;
   margin: 5px 0;
+  color: black;
 }
 
 
 .CTA-left p{
   font-weight: 100;
-  color:#e5e7eb;
+  color: black;
   margin-top: 0;
 }
 
@@ -177,15 +203,16 @@ font-weight: bold;
 }
 
 .CTA-right button{
-  color: white;
+  color: black;
   border: 2px solid white;
-  background-color:#3882f6;
+  background-color:#2fbb67;
   padding: 10px 20px;
   border-radius: 10px;
+  font-size: 12px;
 }
 
 footer {
-  background-color:#1F2937;
+  background-color:#244d43;
   color: white;
   padding: 50px;
   text-align: center;
