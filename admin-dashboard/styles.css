@@ -1,0 +1,60 @@
+* , *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: rgb(20, 20, 20);
+  font-family: Hack, monospace;
+  color: rgb(255, 255, 255);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.sidebar img {
+  width: 100%;
+  padding: 20px;
+}
+
+.sidebar ul{
+  padding: 20px;
+  list-style: none;
+}
+
+.sidebar ul li{
+  margin: 10px 0 10px 0;
+  font-size: 1.5rem;
+}
+
+.sidebar ul li a {
+  color:rgb(255, 255, 255);
+
+}
+.sidebar ul li a:hover {
+  color: #ffa16c;
+  
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color:rgb(33, 33, 33);
+}
+
+.header-left, .header-right{
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+
+}
+
+.header-right img{
+  width: 20%;
+}
