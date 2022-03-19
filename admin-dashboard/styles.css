@@ -41,20 +41,134 @@ html {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 20px;
   background-color:rgb(33, 33, 33);
+}
+
+.header-top, .header-bottom {
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-left, .header-right{
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.header-left input {
+  width: 400px;
+  height: 30px;
+  border-radius: 50px;
+  border: 2px solid #ffa16c;
+  padding: 10px;
+}
+
+.header-left input:focus {
+  border-color: #ffa16c;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(244, 120, 63, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(244, 120, 63, 0.6);
+}
+
+.header-bottom {
+  height: 100px;
+}
+
+.header-bottom img{
+  height: 60%;
 }
 
 .header-right {
+  justify-content: right;
+}
+
+
+.header-right img{
+  width: 15%;
+  margin-right: 20px;
+}
+
+.header-bottom-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-welcome {
+  margin-left: 20px;
+}
+
+.header-bottom .header-right button {
+  margin-left: 20px;
+  height: 30px;
+  width: 100px;
+  border: 2px solid #ffa16c;
+  border-radius: 50px;
+  background: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.header-bottom .header-right button:hover {
+  background: #ffa16c;
+  color: rgb(33, 33, 33);
+}
+
+.content{
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 20px;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  padding-right: 20px;
 
 }
 
-.header-right img{
-  width: 20%;
+.project {
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #ffa16c;
+}
+
+.project h3 {
+  margin-bottom: 10px;
+}
+
+.news hr {
+  margin-top: 7px;
+  color: #ffa16c
+}
+
+.news h3{
+  margin-bottom: 10px;
+}
+
+.announcements h2 {
+  margin-bottom: 20px;
+}
+
+.announcement {
+  margin-top: 20px;
+}
+
+.trending {
+  margin-top: 60px;
+}
+
+.trending h2 {
+  margin-bottom: 20px;
+}
+
+.trending-article {
+  margin-top: 20px;
 }
