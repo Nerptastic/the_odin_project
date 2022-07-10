@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap');
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;;
+  text-align: center;
+}
+
+.add-button{
+  background-color: rgba(148,187,233,1);;
+  border: 2px solid rgba(148,187,233,1);
+  color: #222222;
+  font-weight: bold;
+  font-size: 1.25rem;
+  width: 100%;
+  padding: 5px;
+  max-width: 350px;
+  border-radius: 3px;
+  -webkit-box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15); 
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15);
+}
+
+.add-book {
+  margin: 10px;
+}
+
+.add-button:hover{
+  background-color: rgba(148,187,233, .55);;
+  border: 2px solid rgba(148,187,233,1);
+}
+
+.header, 
+.main, 
+.footer {
+  padding: 20px;
+}
+
+.header {
+  background: radial-gradient(circle, rgba(177,174,238,1) 0%, rgba(148,187,233,1) 100%);
+  color: #222222;
+  font-size: .9rem;
+  letter-spacing: 12px;
+}
+
+
+h1 {
+  text-transform: uppercase;
+}
+.book-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.book-card {
+  border: 2px solid rgba(148,187,233,1);
+  border-radius: 5px;
+  margin: 10px;
+  width: 350px;
+  -webkit-box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15); 
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15);
+}
+
+.book-card h2, .book-card h3, .book-card p, .book-card button {
+  margin: 10px;
+  color: #222222;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.read {
+  background-color: rgb(148, 233, 157);
+  border: 2px solid rgb(148, 233, 157);
+  color: #222222;
+  font-weight: bold;
+  width: 45%;
+  border-radius: 3px;
+  padding: 5px;
+  -webkit-box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15); 
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15);
+}
+
+.read:hover{
+  background-color: rgba(148, 233, 157, .55);;
+}
+
+.delete{
+  background-color: rgb(233, 148, 148);
+  border: 2px solid rgb(233, 148, 148);
+  color: #222222;
+  font-weight: bold;
+  width: 45%;
+  border-radius: 3px;
+  padding: 5px;
+  -webkit-box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15); 
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15);
+}
+
+.delete:hover{
+  background-color: rgba(233, 148, 148, .55);
+}
