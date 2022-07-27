@@ -1,42 +1,20 @@
-// Uncategorized JS for The Odin Project
+//Factory Function
+const personFactory = (name, age) => {
+  const sayHello = () => console.log('hello!');
+  return { name, age, sayHello };
+};
 
-function Book(title, author, pages, read){
-  this.title = title,
-  this.pages = pages,
-  this.author = author,
-  this.read = read,
-  this.info = function (){
-    console.log(`Title: ${this.title}, Pages: ${this.pages}, Author: ${this.author}, Read: ${this.read}`);
-  }
-}
+let nicky = personFactory('Nicky', 24);
 
-let lordOfRings = new Book('Lord of Ring', 'J. R. Smith', 500, true);
-lordOfRings.info();
+console.log(nicky.name);
 
+nicky.sayHello();
 
+// Constructor 
+const Person = function(name, age) {
+  this.sayHello = () => console.log('hello!');
+  this.name = name;
+  this.age = age;
+};
 
-
-function Student(name, grade) {
-  this.name = name
-  this.grade = grade
-}
-
-let nick = new Student('Nicholas', 7);
-console.log('Nick is in grade ' + nick.grade)
-
-Student.prototype.sayName = function() {
-  console.log(this.name)
-}
-nick.sayName();
-
-function EighthGrader(name) {
-  this.name = name
-  this.grade = 8
-}
-
-
-EighthGrader.prototype = Object.create(Student.prototype)
-
-const carl = new EighthGrader("Carl")
-carl.sayName()
-carl.grade
+const nicholas = new Person('Nicholas', 24);

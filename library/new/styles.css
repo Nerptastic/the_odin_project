@@ -6,13 +6,23 @@
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'Montserrat', sans-serif;;
+body {
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
 }
 
+.blur{
+  z-index: 0;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+
+
 .add-button{
-  background-color: rgba(148,187,233,1);;
+  background-color: rgba(148,187,233,1);
   border: 2px solid rgba(148,187,233,1);
   color: #222222;
   font-weight: bold;
@@ -30,7 +40,7 @@ body{
 }
 
 .add-button:hover{
-  background-color: rgba(148,187,233, .55);;
+  background-color: rgba(148,187,233, .55);
   border: 2px solid rgba(148,187,233,1);
 }
 
@@ -91,8 +101,24 @@ h1 {
   box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15);
 }
 
+.not-read {
+  background-color: rgb(233, 148, 148);
+  border: 2px solid rgb(233, 148, 148);
+  color: #222222;
+  font-weight: bold;
+  width: 45%;
+  border-radius: 3px;
+  padding: 5px;
+  -webkit-box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15); 
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15);
+}
+
+.not-read:hover{
+  background-color: rgba(233, 148, 148, .55);
+}
+
 .read:hover{
-  background-color: rgba(148, 233, 157, .55);;
+  background-color: rgba(148, 233, 157, .55);
 }
 
 .delete{
@@ -110,3 +136,63 @@ h1 {
 .delete:hover{
   background-color: rgba(233, 148, 148, .55);
 }
+
+.popup {
+  padding: 20px;
+  z-index: 100;
+  border: 2px solid rgba(148,187,233,1);
+  border-radius: 3px;
+  display: none;
+  position: fixed;
+  background-color: #FFFFFF;
+  width: 500px;
+  max-width: 100%;
+  margin: 5% auto;
+  left: 0;
+  right: 0;
+}
+
+.add-form {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+input {
+  border-radius: 3px;
+  border: 2px solid rgba(148,187,233,1);
+  padding: 5px;
+}
+
+.popup-add{
+  background-color: rgb(148, 233, 157);
+  border: 2px solid rgb(148, 233, 157);
+  color: #222222;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 3px;
+  padding: 5px;
+  -webkit-box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15); 
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15);
+}
+
+.popup-add:hover{
+  background-color: rgba(148, 233, 157, .55);
+}
+
+.popup-close{
+  background-color: rgb(233, 148, 148);
+  border: 2px solid rgb(233, 148, 148);
+  color: #222222;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 3px;
+  padding: 5px;
+  -webkit-box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15); 
+  box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.15);
+}
+
+.popup-close:hover{
+  background-color: rgba(233, 148, 148, .55);
+}
+

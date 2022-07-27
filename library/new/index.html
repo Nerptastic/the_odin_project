@@ -11,15 +11,40 @@
 </head>
 
 <body>
+  <div class="popup" id="addBookPopup">
+    <form class="add-form">
+      <h2>Add a Book</h2>
+    
+      <label for="title"><b>Title</b></label>
+      <input type="text" placeholder="Enter Title" name="Title" id="title" value="" required>
+
+      <label for="author"><b>Author</b></label>
+      <input type="text" placeholder="Enter Author" name="Author" id="author" value=""  required>
+
+      <label for="pages"><b>Pages</b></label>
+      <input type="number" placeholder="Enter Pages" name="Pages" id="pages" value="" required>
+
+      <label for="read"><b>Have you read it?</b></label>
+      <input type="checkbox" placeholder="Read" name="Read" id="read">
+    
+    
+      <button class="popup-add" type="button" onclick="popupSubmit(), closePopup(), removeBlur()">Add</button>
+      <button class="popup-close" type="button" onclick="closePopup(), removeBlur()">Close</button>
+    </form>
+</div>
+
+  <div id="container">
   <div class="header">
     <h1>Library</h1>
   </div>
   <div class="main">
+    
     <div class="add-book">
-      <button class="add-button"> + Add Book</button>
+      <button class="add-button" id="addButton" onclick="openPopup(), addBlur()"> + Add Book</button>
     </div>
 
-    <div class="book-container">
+    <div class="book-container" id="bookContainer">
+
       <div class="book-card">
         <h2>Title</h2>
         <h3>Author</h3>
@@ -29,42 +54,7 @@
           <button class="delete">Delete</button>
           </div>
       </div>
-      <div class="book-card">
-        <h2>Title</h2>
-        <h3>Author</h3>
-        <p>Pages</p>
-        <div class="card-buttons">
-          <button class="read">Read</button>
-          <button class="delete">Delete</button>
-          </div>
-      </div>
-      <div class="book-card">
-        <h2>Title</h2>
-        <h3>Author</h3>
-        <p>Pages</p>
-        <div class="card-buttons">
-          <button class="read">Read</button>
-          <button class="delete">Delete</button>
-          </div>
-      </div>
-      <div class="book-card">
-        <h2>Title</h2>
-        <h3>Author</h3>
-        <p>Pages</p>
-        <div class="card-buttons">
-        <button class="read">Read</button>
-        <button class="delete">Delete</button>
-        </div>
-      </div>
-      <div class="book-card">
-        <h2>Title</h2>
-        <h3>Author</h3>
-        <p>Pages</p>
-        <div class="card-buttons">
-          <button class="read">Read</button>
-          <button class="delete">Delete</button>
-          </div>
-      </div>
+
       <div class="book-card">
         <h2>Title</h2>
         <h3>Author</h3>
@@ -81,6 +71,7 @@
   <div class="footer">
 
   </div>
+</div>
 </body>
 
 </html>

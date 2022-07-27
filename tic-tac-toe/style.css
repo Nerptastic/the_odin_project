@@ -1,99 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap');
-
-*, ::after, ::before {
-box-sizing: border-box;
-padding: 0;
-margin: 0;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto Mono', monospace;
-  background-color:rgb(41, 43, 46);
-  max-width: 1260px;
-  text-align: center;
-  color: white;
-  margin: 0 auto;
-}
-
-
-h1 {
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  font-size: 36px;
-  margin: 20px;
-  padding: 10px;
-  border-bottom: 2px solid white;
-}
-
-.status {
-  margin: 20px;
-  padding: 20px;
-  font-size: 20px;
-  font-weight: 200;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
 }
 
-.game-board {
-  display: grid;
-  width: 450px;
-  height: 450px;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 20px auto;
-  padding: 0;
-  border: 1px solid white;
+table {
+  border: 1px solid black;
+  margin: 25px auto;
+  font-size: 40px;;
 }
 
-.square{
-  width: 150px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 80px;
-  font-weight: 600;
-  border: 1px solid white;
-}
-
-.button {
-  margin: 20px auto;
-  padding: 0;
-}
-
-.restart-button {
-  font-family: 'Roboto Mono', monospace;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  width: 450px;
-  height: 50px;
-  background-color: rgb(41, 43, 46);
-  color: white;
-  border: 2px solid white;
-  font-weight: 600;
-  font-size: 24px;
-}
-
-.dev-button {
-  font-family: 'Roboto Mono', monospace;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  width: 450px;
-  height: 50px;
-  background-color: rgb(41, 43, 46);
-  color: white;
-  border: 2px solid white;
-  font-weight: 600;
-  font-size: 24px;
-
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.restart-button:hover {
-  background-color: white;
-  color: rgb(41, 43, 46);
+td {
+  border: 1px solid black;
+  width: 60px;
+  height: 60px;
 }
