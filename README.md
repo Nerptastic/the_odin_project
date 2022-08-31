@@ -1,2 +1,4 @@
 # the_odin_project
-The Odin Project
+This is a repository for coursework done for The Odin Project. Examples / Demos of everything made in here can be found on my website:
+
+www.npaolucci.com
