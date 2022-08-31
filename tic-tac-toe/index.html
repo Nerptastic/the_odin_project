@@ -5,28 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="#">
   <script src="script.js" defer></script>
   <title>Ticky Tacky</title>
 </head>
 <body>
   <h1> Tic Tac Toe</h1>
-  <h2>It's X's Turn</h2>
+  <h2 id="status">New Game. X's Turn.</h2>
   <div class="main">
-    <table id="gametable">
+    <table id="gameboard">
       <tr>
-        <td id="0">X</td>
-        <td id="1"></td>
-        <td id="2">X</td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
       </tr>
       <tr>
-        <td id="3">X</td>
-        <td id="4">X</td>
-        <td id="5"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
       </tr>
       <tr>
-        <td id="6"></td>
-        <td id="7"></td>
-        <td id="8"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
       </tr>
     </table>
     <button id="restart">Restart</button>
