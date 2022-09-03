@@ -95,11 +95,11 @@ header, header ul, header a {
 }
 
 #section {
+  position: relative;
   text-align: center;
   padding: 50px;
   max-width: 1050px;
   margin: auto;
-
 }
 
 #section h2{
