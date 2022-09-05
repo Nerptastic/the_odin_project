@@ -1,23 +1,9 @@
-import _ from 'lodash';
 import './style.css';
-import Icon from './icon.png';
+import app from './app.js';
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash is now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  // Add the image to our existing div.
-
-  const myIcon = new Image();
-
-  myIcon.src = Icon;
-
-  element.appendChild(myIcon);
-
-  return element;
+export default function displayApp() {
+  const container = document.getElementById('container');
+  container.appendChild(app());
 }
 
-document.body.appendChild(component());
+displayApp();

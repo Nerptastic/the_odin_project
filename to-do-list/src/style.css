@@ -1,9 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
 
-.hello {
-  background: url('./icon.png');
-  color: red;
+body {
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background-color: #222222;
+  color: #aeffff;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: 0 auto;
+}
+
+th {
+  border: 1px solid #222222;
+  text-align: left;
+  background-color: #aeffff;
+  color: #222222;
+  padding: 8px;
+}
+
+.todo-list th {
+  background-color: #aeffff;
+  color: #222222;
+  border: 1px solid #222222;
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  border: 1px solid #aeffff;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #aeffff22;
+}
+
+.project-list button{
+  background: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.project-list button:hover{
+  background: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+.add-button button{
+  background: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.add-button th:hover{
+  background: #aeffff22;
+  color: #aeffff;
+  border: none;
+}
+
+
+.add-button th button:hover{
+  color: #aeffff;
 }
 
 
