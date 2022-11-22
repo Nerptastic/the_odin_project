@@ -21,6 +21,19 @@ th {
   padding: 8px;
 }
 
+#container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  width: 20%;
+}
+
+.right {
+  width: 80%;
+}
+
 .todo-list th {
   background-color: #aeffff;
   color: #222222;
