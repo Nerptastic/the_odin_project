@@ -9,12 +9,11 @@ body {
 
 table {
   border-collapse: collapse;
-  width: 60%;
-  margin: 0 auto;
+  width: 100%;
 }
 
 th {
-  border: 1px solid #222222;
+  border: 1px solid #aeffff;
   text-align: left;
   background-color: #aeffff;
   color: #222222;
@@ -28,18 +27,12 @@ th {
 
 .left {
   width: 20%;
+  padding: 10px;
 }
 
 .right {
   width: 80%;
-}
-
-.todo-list th {
-  background-color: #aeffff;
-  color: #222222;
-  border: 1px solid #222222;
-  text-align: left;
-  padding: 8px;
+  padding: 10px;
 }
 
 td {
