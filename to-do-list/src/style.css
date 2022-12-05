@@ -1,85 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
 
+/* Global Styles */
+
 body {
   font-family: 'Montserrat', sans-serif;
-  text-align: center;
   background-color: #222222;
-  color: #aeffff;
+  color: #a4caca;
+  padding: 0;
+  margin: 0;
 }
 
+button {
+  font-family: 'Montserrat', sans-serif;
+  background: #a4caca22;
+  color: #a4caca;
+  padding: 8px;
+  border: none;
+  margin: 8px 0;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  background-color: #a4caca;
+  color:#222222;
+  padding: 8px;
+}
+
+.header p, .header h1 {
+  margin: 0;
+}
+
+/* Main Grid Formatting */
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.left {
+  width: 20%;
+  padding: 8px;
+}
+
+.right {
+  width: 80%;
+  padding: 8px;
+}
+
+/* Table Styles */
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
 th {
-  border: 1px solid #aeffff;
+  border: 1px solid #a4caca;
   text-align: left;
-  background-color: #aeffff;
+  background-color: #a4caca;
   color: #222222;
   padding: 8px;
-}
 
-#container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.left {
-  width: 20%;
-  padding: 10px;
-}
-
-.right {
-  width: 80%;
-  padding: 10px;
 }
 
 td {
-  border: 1px solid #aeffff;
+  border: 1px solid #a4caca;
   text-align: left;
   padding: 8px;
+
 }
 
 tr:nth-child(even) {
-  background-color: #aeffff22;
+  background-color: #a4caca22;
 }
 
-.project-list button{
-  background: none;
-  border: none;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  font-weight: bold;
+/* Footer Styles */
 
+
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 850px){
+  #container {
+    display: block;
+  }
+  .left {
+    width: 95%;
+    margin: 0 auto;
+    padding: 8px;
+  }
+  .right {
+    width: 95%;
+    padding: 8px;
+    margin: 0 auto;
+  }
 }
-
-.project-list button:hover{
-  background: none;
-  border: none;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  font-weight: bold;
-}
-
-.add-button button{
-  background: none;
-  border: none;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  font-weight: bold;
-
-}
-
-.add-button th:hover{
-  background: #aeffff22;
-  color: #aeffff;
-  border: none;
-}
-
-
-.add-button th button:hover{
-  color: #aeffff;
-}
-
-
